@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+   <style>
+   	body{
+   		margin: 0;
+   	}
+   	   .container{
+   	   	background-image: url(fog.jpg);
+   	   	background-size: cover;
+   	   	padding-top: 200px;
+   	   	padding-bottom: 280px;
+   	   	font-size: 20px;
+   	   }
+
+       p {
+       	padding-top:38px;
+       	text-align: center;
+       	color:#D8DCDD;
+       }
+
+   	   form {
+   	   	text-align: center;
+   	   	margin-top: 50px;
+   	   	margin-bottom: 50px;
+   	   	background: #3B4E55;
+   	   	width: 500px;
+   	   	height: 200px;
+   	   	margin: 0 auto;
+   	   	opacity: 0.9;
+   	   }
+   	   input{
+   	   	background: #2D3D41;
+   	   	border:none;
+   	   	border-radius: 10px;
+   	   	color:#ACB2B4;
+   	   	padding:10px;
+   	   	outline:none;
+   	   }
+   	   button {
+   	   	background: #80B7B3;
+   	   	color:white;
+   	   	border:none;
+   	   	border-radius: 10px;
+   	   	padding: 10px;
+   	   	outline:none;
+   	   }
+   </style>
+<body>
+	<div class="container">
+	  <form id="here">
+		 <p>Like our web-page? Get weekly updates<br> that help you grow as a web-developer.</p>
+	     <input type="Email" id="Email" placeholder="EMAIL" />
+	     <button onclick="return value1()">Отправить</button>
+      </form>
+    </div>
+</body>
+<script>
+ function value1(){
+       var mail = document.getElementById("Email").value;
+	   var valid = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	   if (valid.test(mail) == true){
+           window.open('data:application/vnd.ms-excel,'+encodeURIComponent(mail));
+      }else
+          document.getElementById('here').write("<p>Email введен некорректно</p>");
+}
+</script>
+</html>
